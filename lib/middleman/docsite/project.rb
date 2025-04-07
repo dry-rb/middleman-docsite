@@ -46,9 +46,9 @@ module Middleman
       def latest_version
         (versions
           .map { |v| v.is_a?(Hash) ? v[:value] : v }
-          .reject { |value| value.eql?('master') }
+          .reject { |value| value.eql?('main') }
           .map(&Gem::Version.method(:new))
-          .max || 'master').to_s
+          .max || 'main').to_s
       end
 
       def github_url
